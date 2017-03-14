@@ -5,10 +5,10 @@ import io.github.albertyptang.util.collection.Queue;
 /**
  * @author atang
  */
-public class QueueImpl<E> extends LinkedList<E> implements Queue<E> {
+public class LinkedQueue<E> extends Linked<E> implements Queue<E> {
 
     public void enqueue(final E item) {
-        append(item);
+        addToTail(item);
     }
 
     public E dequeue() {

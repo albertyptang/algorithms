@@ -5,10 +5,10 @@ import io.github.albertyptang.util.collection.Stack;
 /**
  * @author atang
  */
-public class StackImpl<E> extends LinkedList<E> implements Stack<E> {
+public class LinkedStack<E> extends Linked<E> implements Stack<E> {
 
     public void push(final E item) {
-        prepend(item);
+        addToHead(item);
     }
 
     public E pop() {

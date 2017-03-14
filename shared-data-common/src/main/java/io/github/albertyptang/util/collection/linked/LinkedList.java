@@ -5,14 +5,14 @@ import io.github.albertyptang.util.collection.List;
 /**
  * @author atang
  */
-public class ListImpl<E> extends LinkedList<E> implements List<E> {
+public class LinkedList<E> extends Linked<E> implements List<E> {
 
-    public void append(final E item) {
-        super.append(item);
+    public void addToHead(final E item) {
+        super.addToHead(item);
     }
 
-    public void prepend(final E item) {
-        super.prepend(item);
+    public void addToTail(final E item) {
+        super.addToTail(item);
     }
 
     public E deleteHead() {
@@ -23,19 +23,19 @@ public class ListImpl<E> extends LinkedList<E> implements List<E> {
         return super.deleteTail();
     }
 
-    public E search(final E item) {
-        return super.search(item);
+    public E searchFor(final E item) {
+        return super.searchFor(item);
+    }
+
+    public E getHead() {
+        return super.getHead();
     }
 
     public E getTail() {
         return super.getTail();
     }
 
-    public int getSize() {
+    public int length() {
         return size;
-    }
-
-    public E getHead() {
-        return super.getHead();
     }
 }

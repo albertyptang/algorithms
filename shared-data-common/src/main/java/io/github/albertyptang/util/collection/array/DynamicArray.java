@@ -7,13 +7,15 @@ public class DynamicArray<E> {
 
     private static final int INITIAL_CAPACITY = 1 << 4; // 16
 
-    private static final int MAXIMUM_CAPACITY = 1 << 30; // 1 billion
+    private static final int MAXIMUM_CAPACITY = 1 << 10; // 1024
 
     private E[] array = createTable(INITIAL_CAPACITY);
 
-    private int size;
+    /*package*/ int size;
 
     /**
+     * retrieve item at index.
+     *
      * average  O(1)
      * worst    O(1)
      */
@@ -23,6 +25,8 @@ public class DynamicArray<E> {
     }
 
     /**
+     * set item at index.
+     *
      * average  O(1)
      * worst    O(1)
      */
@@ -32,12 +36,14 @@ public class DynamicArray<E> {
     }
 
     /**
+     * add item to end of the populated array.
+     *
      * average  O(1)
      * worst    O(1)
      */
     public void add(final E item) throws Exception {
         if (size == MAXIMUM_CAPACITY) {
-            throw new Exception("Array length is too large");
+            throw new Exception("DynamicArray length is too large");
         }
         size++;
         if (size > array.length) {
@@ -46,28 +52,41 @@ public class DynamicArray<E> {
         array[size - 1] = item;
     }
 
+    /**
+     * @return full length (capacity) of the array.
+     */
     public int length() {
         return array.length;
     }
 
     /**
-     * increase size of underlying array.
+     * increase the capacity of the array.
+     * @param necessaryCapacity minimum capacity required.
      */
     /*package*/ void grow(final int necessaryCapacity) {
         if (necessaryCapacity > array.length) {
-            // double capacity.
+            // double the capacity.
             int newCapacity = array.length << 1;
-            // the following will account for overflowed integers.
-            if (newCapacity < INITIAL_CAPACITY || newCapacity < necessaryCapacity) {
+            // if the new capacity is too large or too small, set it to exactly the capacity required.
+            if (newCapacity > MAXIMUM_CAPACITY || newCapacity < necessaryCapacity) {
                 newCapacity = necessaryCapacity;
             }
             final E[] newArray = createTable(newCapacity);
-            // refill array.
-            for (int i = 0; i < array.length; i++) {
-                newArray[i] = array[i];
-            }
-            array = newArray;
+            array = refill(array, newArray);
         }
+    }
+
+    /**
+     * refill the array.
+     * @param oldArray
+     * @param newArray
+     * @return the new array.
+     */
+    /*package*/ E[] refill(final E[] oldArray, final E[] newArray) {
+        for (int i = 0; i < oldArray.length; i++) {
+            newArray[i] = oldArray[i];
+        }
+        return newArray;
     }
 
     @SuppressWarnings("unchecked") // suppress generic array cast.

@@ -6,12 +6,13 @@
 
     <groupId>io.github.albertyptang</groupId>
     <artifactId>algorithms</artifactId>
+    <name>Algorithms</name>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
         <module>leetcode</module>
-        <module>shared-data-structures</module>
+        <module>shared-data-common</module>
     </modules>
 
     <dependencies>
@@ -22,6 +23,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
 </project>

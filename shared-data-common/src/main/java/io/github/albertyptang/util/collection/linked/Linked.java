@@ -3,12 +3,13 @@ package io.github.albertyptang.util.collection.linked;
 import io.github.albertyptang.util.ObjectUtils;
 
 /**
+ * underlying linked data structure to be used only by other linked implementations.
  * @author atang
  */
-/*package*/ class LinkedList<E> {
+/*package*/ class Linked<E> {
 
-    /*package*/ LinkedList.Node<E> head;
-    /*package*/ LinkedList.Node<E> tail;
+    /*package*/ Linked.Node<E> head;
+    /*package*/ Linked.Node<E> tail;
     public int size;
 
     public static class Node<E> {
@@ -21,14 +22,14 @@ import io.github.albertyptang.util.ObjectUtils;
     }
 
     /**
-     * add element to the beginning of the list.
+     * add element to the beginning.
      *
      * average  O(1)
      * worst    O(1)
      */
-    /*package*/ void prepend(final E item) {
+    /*package*/ void addToHead(final E item) {
         size++;
-        final LinkedList.Node<E> newHead = new LinkedList.Node<E>(item);
+        final Linked.Node<E> newHead = new Linked.Node<E>(item);
         newHead.next = head; // add element to head.
         head = newHead; // reassign head to new head.
         if (tail == null) { // handle originally empty list.
@@ -37,18 +38,18 @@ import io.github.albertyptang.util.ObjectUtils;
     }
 
     /**
-     * add element to the end of the list.
+     * add element to the end.
      *
      * average  O(1)
      * worst    O(1)
      */
-    /*package*/ void append(final E item) {
+    /*package*/ void addToTail(final E item) {
         size++;
         if (tail == null) { // handle originally empty list.
-            tail = new LinkedList.Node<E>(item);
+            tail = new Linked.Node<E>(item);
             head = tail;
         } else {
-            tail.next = new LinkedList.Node<E>(item); // add element to tail.
+            tail.next = new Linked.Node<E>(item); // add element to tail.
             tail = tail.next; // reassign tail to new tail.
         }
     }
@@ -62,7 +63,7 @@ import io.github.albertyptang.util.ObjectUtils;
     /*package*/ E deleteHead() {
         if (size > 0) {
             size--;
-            final LinkedList.Node<E> oldHead = head;
+            final Linked.Node<E> oldHead = head;
             final E oldHeadData = oldHead.data;
             if (head.next != null) {
                 // update head.
@@ -86,7 +87,7 @@ import io.github.albertyptang.util.ObjectUtils;
         if (size > 0) {
             final E oldTailData = tail.data;
             size--;
-            LinkedList.Node<E> searchLinkedList = head;
+            Linked.Node<E> searchLinkedList = head;
             // find the element right before the tail.
             while (searchLinkedList.next != tail) {
                 searchLinkedList = searchLinkedList.next;
@@ -102,13 +103,13 @@ import io.github.albertyptang.util.ObjectUtils;
     }
 
     /**
-     * @return item found in list.  return null if nothing was found or if the item was null.
+     * @return item found in data structure.  return null if nothing was found or if the item was null.
      *
      * average  O(n)
      * worst    O(n)
      */
-    /*package*/ E search(final E item) {
-        LinkedList.Node<E> searchLinkedList = head;
+    /*package*/ E searchFor(final E item) {
+        Linked.Node<E> searchLinkedList = head;
         while (searchLinkedList != null) {
             if (ObjectUtils.equals(searchLinkedList.data, item)) {
                 return searchLinkedList.data;
@@ -140,6 +141,9 @@ import io.github.albertyptang.util.ObjectUtils;
         }
     }
 
+    /**
+     * @return whether the data structure is empty.
+     */
     public boolean isEmpty() {
         return size == 0;
     }
