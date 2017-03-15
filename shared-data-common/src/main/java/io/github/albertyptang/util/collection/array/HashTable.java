@@ -18,7 +18,7 @@ public class HashTable<K,V> {
      */
     private class TableArray<E extends List<Entry<K,V>>> extends DynamicArray<E> {
 
-        // rehash table during refill
+        // rehash table during refill.
         @Override
         E[] refill(E[] oldArray, E[] newArray) {
 
@@ -94,21 +94,26 @@ public class HashTable<K,V> {
     }
 
     /**
-     * get value from the hash table.
-     *
-     * O(1)
-     * worst case O(n)
+     * @return value from the hash table or null if the key does not exist.
      */
     public V get(final K key) {
-        final Entry<K,V> newEntry = new Entry<K,V>(key, null);
-        final int hash = hash(key);
-        if (tableArray.get(hash) != null) {
-            List<Entry<K,V>> entries = tableArray.get(hash);
-            final Entry<K,V> foundEntry = entries.searchFor(newEntry);
-            if (foundEntry != null) {
-                return foundEntry.value;
-            }
-        } return null;
+        try {
+            return getOrThrow(key);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
+     * @return whether the key exists in the hash table.
+     */
+    public boolean containsKey(final K key) {
+        try {
+            getOrThrow(key);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     /**
@@ -123,5 +128,23 @@ public class HashTable<K,V> {
      */
     private int hash(final K key) {
         return key.hashCode() & (tableArray.length() - 1);
+    }
+
+    /**
+     * O(1)
+     * worst case O(n)
+     * @return value from the hash table or throw an exception if the key does not exist.
+     */
+    private V getOrThrow(final K key) throws Exception {
+        final Entry<K,V> newEntry = new Entry<K,V>(key, null);
+        final int hash = hash(key);
+        if (tableArray.get(hash) != null) {
+            List<Entry<K,V>> entries = tableArray.get(hash);
+            final Entry<K,V> foundEntry = entries.searchFor(newEntry);
+            if (foundEntry != null) {
+                return foundEntry.value;
+            }
+        }
+        throw new Exception("Key does not exist in the hash table!");
     }
 }

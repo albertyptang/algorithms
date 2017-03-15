@@ -1,12 +1,19 @@
-package io.github.albertyptang.algorithms.leetcode;
+package io.github.albertyptang.algorithms.leetcode.medium;
 
 /**
+ * 2. Add Two Numbers
+ *
+ * You are given two non-empty linked lists representing two non-negative integers.
+ * The digits are stored in reverse order and each of their nodes contain a single digit.
+ * Add the two numbers and return it as a linked list.
+ *
+ * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ *
  * @author atang
  */
-public class MediumSolution {
+public class AddTwoNumbers {
 
     /**
-     * 2. Add Two Numbers
      * Definition for singly-linked list.
      */
     public static class ListNode {
@@ -17,15 +24,6 @@ public class MediumSolution {
         }
     }
 
-    /**
-     * 2. Add Two Numbers
-     *
-     * You are given two non-empty linked lists representing two non-negative integers.
-     * The digits are stored in reverse order and each of their nodes contain a single digit.
-     * Add the two numbers and return it as a linked list.
-     *
-     * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-     */
     public ListNode addTwoNumbers(final ListNode l1, final ListNode l2) {
         ListNode l1Pointer = l1;
         ListNode l2Pointer = l2;
@@ -50,7 +48,7 @@ public class MediumSolution {
             } else {
                 sumListPointer.next = newNode;
             }
-            sumListPointer = newNode; // move to the latest sum list node.  
+            sumListPointer = newNode; // move to the latest sum list node.
         }
         if (carryOver) { // if there are no more nodes to add, but still carry over remaining.
             sumListPointer.next = new ListNode(1);
