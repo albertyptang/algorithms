@@ -13,6 +13,6 @@ public class EasySolutionTest {
         final int target = 9;
 
         final int[] solution = new EasySolution().twoSum(input, target);
-        Assert.assertArrayEquals(solution, new int[] {0,1});
+        Assert.assertArrayEquals(new int[] {0,1}, solution);
     }
 }

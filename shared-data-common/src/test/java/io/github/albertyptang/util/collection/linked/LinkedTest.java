@@ -42,24 +42,24 @@ public class LinkedTest {
     public void append() throws Exception {
         final Linked<Long> linked = new Linked<Long>();
         linked.addToTail(null);
-        assertEquals(linked.size, 1);
+        assertEquals(1, linked.size);
 
         linked.addToTail(2L);
-        assertEquals(linked.size, 2);
-        assertEquals(linked.getHead(), null);
-        assertEquals(linked.getTail(), (Long) 2L);
+        assertEquals(2, linked.size);
+        assertEquals(null, linked.getHead());
+        assertEquals((Long) 2L, linked.getTail());
     }
 
     @Test
     public void prepend() throws Exception {
         final Linked<Long> linked = new Linked<Long>();
         linked.addToHead(null);
-        assertEquals(linked.size, 1);
+        assertEquals(1, linked.size);
 
         linked.addToHead(2L);
-        assertEquals(linked.size, 2);
-        assertEquals(linked.getHead(), (Long) 2L);
-        assertEquals(linked.getTail(), null);
+        assertEquals(2, linked.size);
+        assertEquals((Long) 2L, linked.getHead());
+        assertEquals(null, linked.getTail());
     }
 
     @Test
@@ -70,20 +70,20 @@ public class LinkedTest {
         linked.addToTail(5L);
 
         linked.deleteTail();
-        assertEquals(linked.size, 2);
-        assertEquals(linked.searchFor(5L), null);
+        assertEquals(2, linked.size);
+        assertEquals(null, linked.searchFor(5L));
 
         linked.deleteHead();
-        assertEquals(linked.size, 1);
-        assertEquals(linked.searchFor(3L), null);
+        assertEquals(1, linked.size);
+        assertEquals(null, linked.searchFor(3L));
 
-        assertEquals(linked.searchFor(4L), (Long) 4L); // middle element still remains
+        assertEquals((Long) 4L, linked.searchFor(4L)); // middle element still remains
 
         linked.deleteHead();
         linked.deleteTail();
         linked.deleteHead();
         linked.deleteTail();
-        assertEquals(linked.size, 0);
+        assertEquals(0, linked.size);
     }
 
     @Test
@@ -92,14 +92,14 @@ public class LinkedTest {
         linked.addToTail(new TestObject(1,2));
 
         final TestObject found = linked.searchFor(new TestObject(1,2));
-        assertEquals(found, new TestObject(1,2));
+        assertEquals(new TestObject(1,2), found);
 
         found.second = 3; // edit the test object within the list.
 
         final TestObject notFound = linked.searchFor(new TestObject(1,2));
-        assertEquals(notFound, null);
+        assertEquals(null, notFound);
 
         final TestObject foundAgain = linked.searchFor(new TestObject(1,3));
-        assertEquals(foundAgain, new TestObject(1,3));
+        assertEquals(new TestObject(1,3), foundAgain);
     }
 }
