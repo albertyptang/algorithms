@@ -11,7 +11,7 @@ import io.github.albertyptang.util.collection.array.HashTable;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
 
-    public int lengthOfLongestSubstring(final String s) {
+    public static int solve(final String s) {
         final HashTable<Character,Integer> charToIndex = new HashTable<Character, Integer>();
         int start = 0;
         int longest = 0;

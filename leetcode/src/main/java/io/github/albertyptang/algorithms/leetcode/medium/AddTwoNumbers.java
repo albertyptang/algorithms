@@ -24,7 +24,7 @@ public class AddTwoNumbers {
         }
     }
 
-    public ListNode addTwoNumbers(final ListNode l1, final ListNode l2) {
+    public static ListNode addTwoNumbers(final ListNode l1, final ListNode l2) {
         ListNode l1Pointer = l1;
         ListNode l2Pointer = l2;
         ListNode sumList = null;

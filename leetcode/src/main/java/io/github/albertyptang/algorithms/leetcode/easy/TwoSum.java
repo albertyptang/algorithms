@@ -13,7 +13,7 @@ import io.github.albertyptang.util.collection.array.HashTable;
  */
 public class TwoSum {
 
-    public int[] twoSum(final int[] nums, final int target) {
+    public static int[] solve(final int[] nums, final int target) {
 
         // loop through nums to shove them into some storage and check if (target - nums) exists in said storage.
 

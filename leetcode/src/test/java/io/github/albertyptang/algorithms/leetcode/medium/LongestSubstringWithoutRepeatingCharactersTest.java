@@ -12,13 +12,13 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
     @Test
     public void lengthOfLongestSubstring() throws Exception {
 
-        assertEquals("pwwkew", 3, new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("pwwkew"));
+        assertEquals("pwwkew", 3, LongestSubstringWithoutRepeatingCharacters.solve("pwwkew"));
 
-        assertEquals("c", 1, new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("c"));
+        assertEquals("c", 1, LongestSubstringWithoutRepeatingCharacters.solve("c"));
 
-        assertEquals("cdd", 2, new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("cdd"));
+        assertEquals("cdd", 2, LongestSubstringWithoutRepeatingCharacters.solve("cdd"));
 
-        assertEquals("dvdf", 3, new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("dvdf"));
+        assertEquals("dvdf", 3, LongestSubstringWithoutRepeatingCharacters.solve("dvdf"));
     }
 
 }

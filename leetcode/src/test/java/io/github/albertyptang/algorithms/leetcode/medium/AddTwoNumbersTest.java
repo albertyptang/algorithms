@@ -21,7 +21,7 @@ public class AddTwoNumbersTest {
         l2.next = new AddTwoNumbers.ListNode(6);
         l2.next.next = new AddTwoNumbers.ListNode(4);
 
-        final AddTwoNumbers.ListNode solution = new AddTwoNumbers().addTwoNumbers(l1, l2);
+        final AddTwoNumbers.ListNode solution = AddTwoNumbers.addTwoNumbers(l1, l2);
         assertEquals(7, solution.val);
         assertEquals(0, solution.next.val);
         assertEquals(8, solution.next.next.val);
