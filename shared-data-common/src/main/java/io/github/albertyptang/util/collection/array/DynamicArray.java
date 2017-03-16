@@ -15,9 +15,9 @@ public class DynamicArray<E> {
 
     /**
      * retrieve item at index.
-     *
      * average  O(1)
      * worst    O(1)
+     * @return retrieved item.
      */
     public E get(final int index) {
         validateIndex(index);
@@ -26,7 +26,6 @@ public class DynamicArray<E> {
 
     /**
      * set item at index.
-     *
      * average  O(1)
      * worst    O(1)
      */
@@ -37,19 +36,41 @@ public class DynamicArray<E> {
 
     /**
      * add item to end of the populated array.
-     *
      * average  O(1)
      * worst    O(1)
      */
-    public void add(final E item) throws Exception {
-        if (size == MAXIMUM_CAPACITY) {
-            throw new Exception("DynamicArray length is too large");
+    public void add(final E item) {
+        // note that this will silently fail to add.
+        if (size != MAXIMUM_CAPACITY) {
+            size++;
+            if (size > array.length) {
+                grow(size);
+            }
+            array[size - 1] = item;
         }
-        size++;
-        if (size > array.length) {
-            grow(size);
+    }
+
+    /**
+     * remove item from end of the populated array.
+     * average  O(1)
+     * worst    O(1)
+     * @return deleted item.
+     */
+    public E remove() {
+        if (!isEmpty()) {
+            final E deletedItem = array[size - 1];
+            array[size - 1] = null;
+            size--;
+            return deletedItem;
         }
-        array[size - 1] = item;
+        return null;
+    }
+
+    /**
+     * @return whether array is empty.
+     */
+    public boolean isEmpty() {
+        return size == 0;
     }
 
     /**
@@ -57,6 +78,13 @@ public class DynamicArray<E> {
      */
     public int length() {
         return array.length;
+    }
+
+    /**
+     * @return shallow copy of underlying array.
+     */
+    public E[] toArray() {
+        return array.clone();
     }
 
     /**

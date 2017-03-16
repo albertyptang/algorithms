@@ -11,7 +11,7 @@ public class HashTable<K,V> {
     /**
      * underlying data array.  the length will be considered the capacity.
      */
-    private TableArray<List<Entry<K,V>>> tableArray = new TableArray<List<Entry<K,V>>>();
+    private final TableArray<List<Entry<K,V>>> tableArray = new TableArray<List<Entry<K,V>>>();
 
     /**
      * table array.
@@ -20,7 +20,7 @@ public class HashTable<K,V> {
 
         // rehash table during refill.
         @Override
-        E[] refill(E[] oldArray, E[] newArray) {
+        E[] refill(final E[] oldArray, final E[] newArray) {
 
             for (int i = 0; i < oldArray.length; i++) {
                 final List<Entry<K,V>> listOfEntries = oldArray[i];
@@ -54,7 +54,7 @@ public class HashTable<K,V> {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
 
-            Entry<?, ?> entry = (Entry<?, ?>) o;
+            final Entry<?, ?> entry = (Entry<?, ?>) o;
 
             return key != null ? key.equals(entry.key) : entry.key == null;
         }
@@ -62,7 +62,6 @@ public class HashTable<K,V> {
 
     /**
      * add an entry into the hash table.
-     *
      * O(1)
      * worst case O(n)
      */
@@ -71,7 +70,7 @@ public class HashTable<K,V> {
         final int hash = hash(key);
         // entries already exist in hash bucket.
         if (tableArray.get(hash) != null) {
-            List<Entry<K,V>> oldEntries = tableArray.get(hash);
+            final List<Entry<K,V>> oldEntries = tableArray.get(hash);
             final Entry<K,V> foundEntry = oldEntries.searchFor(newEntry);
             if (foundEntry == null) {
                 // entry doesn't exist, add to the end of the entries list.
@@ -111,7 +110,7 @@ public class HashTable<K,V> {
         try {
             getOrThrow(key);
             return true;
-        } catch (Exception e) {
+        } catch (final Exception e) {
             return false;
         }
     }
@@ -131,15 +130,16 @@ public class HashTable<K,V> {
     }
 
     /**
+     * get value from the hash table or throw an exception if the key does not exist.
      * O(1)
      * worst case O(n)
-     * @return value from the hash table or throw an exception if the key does not exist.
+     * @return found value.
      */
     private V getOrThrow(final K key) throws Exception {
         final Entry<K,V> newEntry = new Entry<K,V>(key, null);
         final int hash = hash(key);
         if (tableArray.get(hash) != null) {
-            List<Entry<K,V>> entries = tableArray.get(hash);
+            final List<Entry<K,V>> entries = tableArray.get(hash);
             final Entry<K,V> foundEntry = entries.searchFor(newEntry);
             if (foundEntry != null) {
                 return foundEntry.value;

@@ -19,12 +19,12 @@ public class AddTwoNumbers {
     public static class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) {
+        ListNode(final int x) {
             val = x;
         }
     }
 
-    public static ListNode addTwoNumbers(final ListNode l1, final ListNode l2) {
+    public static ListNode add(final ListNode l1, final ListNode l2) {
         ListNode l1Pointer = l1;
         ListNode l2Pointer = l2;
         ListNode sumList = null;

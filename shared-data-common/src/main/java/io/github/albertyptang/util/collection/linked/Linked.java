@@ -23,7 +23,6 @@ import io.github.albertyptang.util.ObjectUtils;
 
     /**
      * add element to the beginning.
-     *
      * average  O(1)
      * worst    O(1)
      */
@@ -39,7 +38,6 @@ import io.github.albertyptang.util.ObjectUtils;
 
     /**
      * add element to the end.
-     *
      * average  O(1)
      * worst    O(1)
      */
@@ -56,9 +54,9 @@ import io.github.albertyptang.util.ObjectUtils;
 
     /**
      * delete first element.
-     *
      * average  O(1)
      * worst    O(1)
+     * @return deleted element.
      */
     /*package*/ E deleteHead() {
         if (size > 0) {
@@ -79,9 +77,9 @@ import io.github.albertyptang.util.ObjectUtils;
 
     /**
      * delete last element.
-     *
      * average  O(n)
      * worst    O(n)
+     * @return deleted element.
      */
     /*package*/ E deleteTail() {
         if (size > 0) {
@@ -103,10 +101,10 @@ import io.github.albertyptang.util.ObjectUtils;
     }
 
     /**
-     * @return item found in data structure.  return null if nothing was found or if the item was null.
-     *
+     * search for item in data structure.
      * average  O(n)
      * worst    O(n)
+     * @return item found in data structure.  return null if nothing was found or if the item was null.
      */
     /*package*/ E searchFor(final E item) {
         Linked.Node<E> searchLinkedList = head;

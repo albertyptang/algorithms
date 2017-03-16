@@ -16,7 +16,7 @@ public class LinkedList<E> extends Linked<E> implements List<E> {
     }
 
     public E deleteHead() {
-        return super.deleteTail();
+        return super.deleteHead();
     }
 
     public E deleteTail() {

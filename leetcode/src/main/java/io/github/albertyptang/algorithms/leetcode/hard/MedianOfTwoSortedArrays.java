@@ -13,7 +13,7 @@ package io.github.albertyptang.algorithms.leetcode.hard;
  */
 public class MedianOfTwoSortedArrays {
 
-    public static double solve(int[] nums1, int[] nums2) {
+    public static double getMedian(final int[] nums1, final  int[] nums2) {
         // find out what the index of the middle numbers would be if the two arrays were merged.
         final int length = nums1.length + nums2.length;
         final int mid1Index = (int) Math.ceil(length / 2D) - 1;
@@ -21,8 +21,8 @@ public class MedianOfTwoSortedArrays {
 
         // "merge" the array by iterating through both in order.
         int mergeP = 0; // pointer for the "merged" array.
-        int nums1P = 0; // pointer for nums1
-        int nums2P = 0; // pointer for nums2
+        int nums1P = 0; // pointer for nums1.
+        int nums2P = 0; // pointer for nums2.
         int mid1 = 0;
         int mid2 = 0;
         // the lower of the two elements will be "sorted" into "merged".
