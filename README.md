@@ -7,5 +7,5 @@ Maven project.
 Shared data structures and utilities.
 
 ### leetcode
-Algorithm problem set.  
+Algorithm problems.  
 https://leetcode.com/
