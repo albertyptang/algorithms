@@ -12,7 +12,7 @@
 
     <modules>
         <module>leetcode</module>
-        <module>shared-data-common</module>
+        <module>shared-util</module>
     </modules>
 
     <dependencies>

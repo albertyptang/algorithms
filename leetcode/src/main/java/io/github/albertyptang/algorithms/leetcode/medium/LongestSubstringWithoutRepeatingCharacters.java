@@ -1,6 +1,6 @@
 package io.github.albertyptang.algorithms.leetcode.medium;
 
-import io.github.albertyptang.util.collection.array.HashTable;
+import io.github.albertyptang.algorithms.util.collection.array.HashTable;
 
 /**
  * 3. Longest Substring Without Repeating Characters

@@ -1,6 +1,6 @@
 package io.github.albertyptang.algorithms.leetcode.easy;
 
-import io.github.albertyptang.util.collection.array.HashTable;
+import io.github.albertyptang.algorithms.util.collection.array.HashTable;
 
 /**
  * 1. Two Sum
