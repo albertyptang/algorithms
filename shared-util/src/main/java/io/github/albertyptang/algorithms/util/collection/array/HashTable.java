@@ -11,7 +11,7 @@ public class HashTable<K,V> {
     /**
      * underlying data array.  the length will be considered the capacity.
      */
-    private final TableArray<List<Entry<K,V>>> tableArray = new TableArray<List<Entry<K,V>>>();
+    private final TableArray<List<Entry<K,V>>> tableArray = new TableArray<>();
 
     /**
      * table array.
@@ -22,8 +22,7 @@ public class HashTable<K,V> {
         @Override
         E[] refill(final E[] oldArray, final E[] newArray) {
 
-            for (int i = 0; i < oldArray.length; i++) {
-                final List<Entry<K,V>> listOfEntries = oldArray[i];
+            for(final E listOfEntries : oldArray) {
                 if (listOfEntries != null) {
                     while (listOfEntries.length() > 0) {
                         final Entry<K,V> entry = listOfEntries.deleteHead();
@@ -66,7 +65,7 @@ public class HashTable<K,V> {
      * worst case O(n)
      */
     public void put(final K key, final V value) {
-        final Entry<K,V> newEntry = new Entry<K,V>(key, value);
+        final Entry<K,V> newEntry = new Entry<>(key, value);
         final int hash = hash(key);
         // entries already exist in hash bucket.
         if (tableArray.get(hash) != null) {
@@ -81,7 +80,7 @@ public class HashTable<K,V> {
                 return;
             }
         } else {
-            final List<Entry<K,V>> newEntryList = new LinkedList<Entry<K,V>>();
+            final List<Entry<K,V>> newEntryList = new LinkedList<>();
             newEntryList.addToTail(newEntry);
             tableArray.set(hash, newEntryList);
         }
@@ -136,7 +135,7 @@ public class HashTable<K,V> {
      * @return found value.
      */
     private V getOrThrow(final K key) throws Exception {
-        final Entry<K,V> newEntry = new Entry<K,V>(key, null);
+        final Entry<K,V> newEntry = new Entry<>(key, null);
         final int hash = hash(key);
         if (tableArray.get(hash) != null) {
             final List<Entry<K,V>> entries = tableArray.get(hash);

@@ -18,7 +18,7 @@ public class TwoSum {
         // loop through nums to shove them into some storage and check if (target - nums) exists in said storage.
 
         // storage index is the num value, storage value is the num index.
-        final HashTable<Integer,Integer> hashTable = new HashTable<Integer,Integer>();
+        final HashTable<Integer,Integer> hashTable = new HashTable<>();
 
         for (int i = 0; i < nums.length; i++) {
             final int num = nums[i];

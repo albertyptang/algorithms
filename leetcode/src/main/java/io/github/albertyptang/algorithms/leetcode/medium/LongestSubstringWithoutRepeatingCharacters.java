@@ -12,7 +12,7 @@ import io.github.albertyptang.algorithms.util.collection.array.HashTable;
 public class LongestSubstringWithoutRepeatingCharacters {
 
     public static int solve(final String s) {
-        final HashTable<Character,Integer> charToIndex = new HashTable<Character, Integer>();
+        final HashTable<Character,Integer> charToIndex = new HashTable<>();
         int start = 0;
         int longest = 0;
 
@@ -25,7 +25,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 // update start index to point to the character after the repeat.
                 start = charToIndex.get(c) + 1;
             }
-            // record last occurence of the character.
+            // record last occurrence of the character.
             charToIndex.put(c,i);
         }
         // account for the remainder of the string.

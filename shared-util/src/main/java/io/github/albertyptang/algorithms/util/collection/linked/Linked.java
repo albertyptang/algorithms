@@ -8,15 +8,15 @@ import io.github.albertyptang.algorithms.util.ObjectUtils;
  */
 /*package*/ class Linked<E> {
 
-    /*package*/ Linked.Node<E> head;
-    /*package*/ Linked.Node<E> tail;
-    public int size;
+    private Linked.Node<E> head;
+    private Linked.Node<E> tail;
+    /*package*/ int size;
 
-    public static class Node<E> {
-        public E data;
-        public Node<E> next;
+    /*package*/ static class Node<E> {
+        /*package*/ E data;
+        /*package*/ Node<E> next;
 
-        public Node(final E item) {
+        /*package*/ Node(final E item) {
             this.data = item;
         }
     }
@@ -28,7 +28,7 @@ import io.github.albertyptang.algorithms.util.ObjectUtils;
      */
     /*package*/ void addToHead(final E item) {
         size++;
-        final Linked.Node<E> newHead = new Linked.Node<E>(item);
+        final Linked.Node<E> newHead = new Linked.Node<>(item);
         newHead.next = head; // add element to head.
         head = newHead; // reassign head to new head.
         if (tail == null) { // handle originally empty list.
@@ -44,10 +44,10 @@ import io.github.albertyptang.algorithms.util.ObjectUtils;
     /*package*/ void addToTail(final E item) {
         size++;
         if (tail == null) { // handle originally empty list.
-            tail = new Linked.Node<E>(item);
+            tail = new Linked.Node<>(item);
             head = tail;
         } else {
-            tail.next = new Linked.Node<E>(item); // add element to tail.
+            tail.next = new Linked.Node<>(item); // add element to tail.
             tail = tail.next; // reassign tail to new tail.
         }
     }
