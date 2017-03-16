@@ -3,7 +3,7 @@ package io.github.albertyptang.algorithms.util.collection;
 /**
  * @author atang
  */
-public interface List<E> {
+public interface IList<E> {
 
     /**
      * add item to the beginning of the list.

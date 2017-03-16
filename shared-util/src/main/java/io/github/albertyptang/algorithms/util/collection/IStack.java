@@ -3,27 +3,27 @@ package io.github.albertyptang.algorithms.util.collection;
 /**
  * @author atang
  */
-public interface Queue<E> {
+public interface IStack<E> {
 
     /**
-     * add item to the end of the queue.
+     * add item to the top of the stack.
      * @param item item to add.
      */
-    void enqueue(final E item);
+    void push(final E item);
 
     /**
-     * remove the last item in the queue.
+     * remove the top item of the stack.
      * @return the removed item.
      */
-    E dequeue();
+    E pop();
 
     /**
-     * @return the first item in the queue.
+     * @return the top item of the stack.
      */
     E peek();
 
     /**
-     * @return whether the queue is empty.
+     * @return whether the stack is empty.
      */
     boolean isEmpty();
 }

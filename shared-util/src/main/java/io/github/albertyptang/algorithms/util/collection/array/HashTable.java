@@ -1,7 +1,7 @@
 package io.github.albertyptang.algorithms.util.collection.array;
 
 import io.github.albertyptang.algorithms.util.collection.linked.LinkedList;
-import io.github.albertyptang.algorithms.util.collection.List;
+import io.github.albertyptang.algorithms.util.collection.IList;
 
 /**
  * @author atang
@@ -11,12 +11,12 @@ public class HashTable<K,V> {
     /**
      * underlying data array.  the length will be considered the capacity.
      */
-    private final TableArray<List<Entry<K,V>>> tableArray = new TableArray<>();
+    private final TableArray<IList<Entry<K,V>>> tableArray = new TableArray<>();
 
     /**
      * table array.
      */
-    private class TableArray<E extends List<Entry<K,V>>> extends DynamicArray<E> {
+    private class TableArray<E extends IList<Entry<K,V>>> extends DynamicArray<E> {
 
         // rehash table during refill.
         @Override
@@ -69,7 +69,7 @@ public class HashTable<K,V> {
         final int hash = hash(key);
         // entries already exist in hash bucket.
         if (tableArray.get(hash) != null) {
-            final List<Entry<K,V>> oldEntries = tableArray.get(hash);
+            final IList<Entry<K,V>> oldEntries = tableArray.get(hash);
             final Entry<K,V> foundEntry = oldEntries.searchFor(newEntry);
             if (foundEntry == null) {
                 // entry doesn't exist, add to the end of the entries list.
@@ -80,7 +80,7 @@ public class HashTable<K,V> {
                 return;
             }
         } else {
-            final List<Entry<K,V>> newEntryList = new LinkedList<>();
+            final IList<Entry<K,V>> newEntryList = new LinkedList<>();
             newEntryList.addToTail(newEntry);
             tableArray.set(hash, newEntryList);
         }
@@ -138,7 +138,7 @@ public class HashTable<K,V> {
         final Entry<K,V> newEntry = new Entry<>(key, null);
         final int hash = hash(key);
         if (tableArray.get(hash) != null) {
-            final List<Entry<K,V>> entries = tableArray.get(hash);
+            final IList<Entry<K,V>> entries = tableArray.get(hash);
             final Entry<K,V> foundEntry = entries.searchFor(newEntry);
             if (foundEntry != null) {
                 return foundEntry.value;

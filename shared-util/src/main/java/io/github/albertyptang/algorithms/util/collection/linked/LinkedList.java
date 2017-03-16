@@ -1,11 +1,11 @@
 package io.github.albertyptang.algorithms.util.collection.linked;
 
-import io.github.albertyptang.algorithms.util.collection.List;
+import io.github.albertyptang.algorithms.util.collection.IList;
 
 /**
  * @author atang
  */
-public class LinkedList<E> extends Linked<E> implements List<E> {
+public class LinkedList<E> extends Linked<E> implements IList<E> {
 
     public void addToHead(final E item) {
         super.addToHead(item);
