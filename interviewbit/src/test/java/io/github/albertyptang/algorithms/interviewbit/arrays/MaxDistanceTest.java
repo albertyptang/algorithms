@@ -2,10 +2,9 @@ package io.github.albertyptang.algorithms.interviewbit.arrays;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author atang
@@ -13,7 +12,7 @@ import static org.junit.Assert.*;
 public class MaxDistanceTest {
     @Test
     public void maximumGap() throws Exception {
-        assertEquals(2, MaxDistance.maximumGap(new ArrayList<>(Arrays.asList(3,5,4,2))));
-        assertEquals(3, MaxDistance.maximumGap(new ArrayList<>(Arrays.asList(3,3,3,3))));
+        assertEquals(2, MaxDistance.maximumGap(Arrays.asList(3,5,4,2)));
+        assertEquals(3, MaxDistance.maximumGap(Arrays.asList(3,3,3,3)));
     }
 }

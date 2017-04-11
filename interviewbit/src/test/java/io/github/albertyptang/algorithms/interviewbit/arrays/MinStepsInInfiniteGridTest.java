@@ -14,20 +14,20 @@ public class MinStepsInInfiniteGridTest {
     @Test
     public void coverPoints() throws Exception {
         assertEquals(2, MinStepsInInfiniteGrid.coverPoints(
-            new ArrayList<>(Arrays.asList(0,1,1)),
-            new ArrayList<>(Arrays.asList(0,1,2))
+            Arrays.asList(0,1,1),
+            Arrays.asList(0,1,2)
         ));
         assertEquals(7, MinStepsInInfiniteGrid.coverPoints(
-            new ArrayList<>(Arrays.asList(0,7)),
-            new ArrayList<>(Arrays.asList(0,7))
+            Arrays.asList(0,7),
+            Arrays.asList(0,7)
         ));
         assertEquals(2, MinStepsInInfiniteGrid.coverPoints(
-            new ArrayList<>(Arrays.asList(0,1,1)),
-            new ArrayList<>(Arrays.asList(0,1,2))
+            Arrays.asList(0,1,1),
+            Arrays.asList(0,1,2)
         ));
         assertEquals(8, MinStepsInInfiniteGrid.coverPoints(
-            new ArrayList<>(Arrays.asList(0,6,7)),
-            new ArrayList<>(Arrays.asList(0,7,7))
+            Arrays.asList(0,6,7),
+            Arrays.asList(0,7,7)
         ));
     }
 }

@@ -1,6 +1,7 @@
 package io.github.albertyptang.algorithms.interviewbit.arrays;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * You are in an infinite 2D grid where you can move in any of the 8 directions :
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 public class MinStepsInInfiniteGrid {
     // X and Y co-ordinates of the points in order.
     // Each point is represented by (X.get(i), Y.get(i))
-    public static int coverPoints(ArrayList<Integer> X, ArrayList<Integer> Y) {
+    public static int coverPoints(final List<Integer> X, final List<Integer> Y) {
         int steps = 0;
         if (X.size() < 2 || X.size() != Y.size()) {
             return steps;
