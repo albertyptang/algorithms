@@ -13,6 +13,7 @@
     <modules>
         <module>leetcode</module>
         <module>shared-util</module>
+        <module>interviewbit</module>
     </modules>
 
     <dependencies>
