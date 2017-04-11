@@ -1,4 +1,4 @@
-package io.github.albertyptang.algorithms.interviewbit.arrays.arragement;
+package io.github.albertyptang.algorithms.interviewbit.arrays;
 
 import org.junit.Test;
 
