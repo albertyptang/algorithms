@@ -1,6 +1,5 @@
 package io.github.albertyptang.algorithms.interviewbit.arrays;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
