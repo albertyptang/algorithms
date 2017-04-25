@@ -29,7 +29,7 @@ public class RotatedArray {
         return a.get(findMinIndex(a, 0, a.size() - 1, a.get(0)));
     }
 
-    private static int findMinIndex(final List<Integer> a, final int startIndex, final int endIndex, final int first) {
+    public static int findMinIndex(final List<Integer> a, final int startIndex, final int endIndex, final int first) {
         if (a.size() == 1) {
             return a.get(0);
         }
