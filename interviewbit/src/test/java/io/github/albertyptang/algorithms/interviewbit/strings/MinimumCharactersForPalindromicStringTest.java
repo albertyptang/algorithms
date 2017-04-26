@@ -17,5 +17,6 @@ public class MinimumCharactersForPalindromicStringTest {
         assertEquals("ABC", 2, MinimumCharactersForPalindromicString.solve("ABC"));
         assertEquals("AAC", 1, MinimumCharactersForPalindromicString.solve("AAC"));
         assertEquals("AACECAAAA", 2, MinimumCharactersForPalindromicString.solve("AACECAAAA"));
+        assertEquals("AACEECAAAA", 2, MinimumCharactersForPalindromicString.solve("AACEECAAAA"));
     }
 }
