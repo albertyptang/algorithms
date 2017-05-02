@@ -49,20 +49,4 @@ public class ReverseLinkedList {
         }
         return a;
     }
-
-    public static void main(String[] args) {
-        final ListNode list = new ListNode(1);
-        list.next = new ListNode(2);
-//        list.next.next = new ListNode(3);
-//        list.next.next.next = new ListNode(4);
-//        list.next.next.next.next = new ListNode(5);
-
-        final ListNode reversed = reverseList(list);
-        System.out.println(reversed.val);
-        System.out.println(reversed.next.val);
-//        System.out.println(reversed.next.next.val);
-//        System.out.println(reversed.next.next.next.val);
-//        System.out.println(reversed.next.next.next.next.val);
-//        System.out.println(reversed.next.next.next.next.next.val);
-    }
 }
