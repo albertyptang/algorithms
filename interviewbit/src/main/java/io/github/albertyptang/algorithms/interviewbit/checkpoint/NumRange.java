@@ -1,7 +1,6 @@
 package io.github.albertyptang.algorithms.interviewbit.checkpoint;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Given an array of non negative integers A, and a range (B, C),
