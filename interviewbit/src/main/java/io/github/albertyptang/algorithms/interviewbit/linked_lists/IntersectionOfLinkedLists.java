@@ -21,9 +21,7 @@ import io.github.albertyptang.algorithms.interviewbit.linked_lists.domain.ListNo
  * The linked lists must retain their original structure after the function returns.
  * You may assume there are no cycles anywhere in the entire linked structure.
  * Your code should preferably run in O(n) time and use only O(1) memory.
- * Problem approach completely explained :
  *
- * Complete code in the hints section.
  * @author atang
  */
 public class IntersectionOfLinkedLists {
