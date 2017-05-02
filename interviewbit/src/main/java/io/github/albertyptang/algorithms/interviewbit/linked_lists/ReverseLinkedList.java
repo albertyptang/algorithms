@@ -9,6 +9,7 @@ import io.github.albertyptang.algorithms.interviewbit.linked_lists.domain.ListNo
  * Given 1->2->3->4->5->NULL,
  *
  * return 5->4->3->2->1->NULL.
+ *
  * @author atang
  */
 public class ReverseLinkedList {

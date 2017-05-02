@@ -17,6 +17,7 @@ import io.github.albertyptang.algorithms.interviewbit.linked_lists.domain.ListNo
  * 1 -> 2 -> 3 -> 4
  *
  * Return the node corresponding to node 3.
+ *
  * @author atang
  */
 public class ListCycle {
