@@ -13,12 +13,12 @@ import static org.junit.Assert.*;
 public class IntersectionOfLinkedListsTest {
     @Test
     public void getIntersectionNode() throws Exception {
-        final ListNode c = ListNodeBuilder.build(new int[] {8, 9, 7});
+        final ListNode c = ListNodeBuilder.build(8, 9, 7);
 
-        final ListNode a =  ListNodeBuilder.build(new int[] {1, 2});
+        final ListNode a = ListNodeBuilder.build(1, 2);
         a.next.next = c;
 
-        final ListNode b = ListNodeBuilder.build(new int[] {3, 4, 5});
+        final ListNode b = ListNodeBuilder.build(3, 4, 5);
         b.next.next.next = c;
 
         assertEquals(c, IntersectionOfLinkedLists.getIntersectionNode(a, b));

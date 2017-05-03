@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class ReverseLinkedListTest {
     @Test
     public void reverseList() throws Exception {
-        final ListNode list = ListNodeBuilder.build(new int[] {1, 2, 3, 4, 5});
+        final ListNode list = ListNodeBuilder.build(1, 2, 3, 4, 5);
         final ListNode reversed = ReverseLinkedList.reverseList(list);
         assertEquals(5, reversed.val);
         assertEquals(4, reversed.next.val);

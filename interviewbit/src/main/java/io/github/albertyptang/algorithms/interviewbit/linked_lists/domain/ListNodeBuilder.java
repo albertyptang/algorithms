@@ -5,7 +5,7 @@ package io.github.albertyptang.algorithms.interviewbit.linked_lists.domain;
  */
 public class ListNodeBuilder {
 
-    public static ListNode build(final int[] array) {
+    public static ListNode build(final int ... array) {
         if (array.length < 1) {
             return null;
         }
