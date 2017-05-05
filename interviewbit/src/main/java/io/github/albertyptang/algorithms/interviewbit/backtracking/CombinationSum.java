@@ -33,14 +33,13 @@ import java.util.Set;
 public class CombinationSum {
     public static ArrayList<ArrayList<Integer>> combinationSum(final ArrayList<Integer> a, final int b) {
         final ArrayList<ArrayList<Integer>> results = new ArrayList<>();
-        final ArrayList<Integer> result = new ArrayList<>();
 
         // remove duplicates and sort.
         final Set<Integer> set = new HashSet<>(a);
         final ArrayList<Integer> dedupedA = new ArrayList<>(set);
         Collections.sort(dedupedA);
 
-        combinationSumRecursion(dedupedA, b, 0, 0, result, results);
+        combinationSumRecursion(dedupedA, b, 0, 0, new ArrayList<>(), results);
         return results;
     }
 

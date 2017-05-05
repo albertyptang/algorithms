@@ -16,8 +16,7 @@ public class GenerateAllParenthesesII {
 
     public static ArrayList<String> generateParenthesis(final int a) {
         final ArrayList<String> results = new ArrayList<>();
-        final StringBuilder sb = new StringBuilder();
-        addParens(results, sb, 0, 0, 0, a);
+        addParens(results, new StringBuilder(), 0, 0, 0, a);
         return results;
     }
 
