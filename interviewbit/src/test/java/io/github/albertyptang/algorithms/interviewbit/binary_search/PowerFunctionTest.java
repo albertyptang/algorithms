@@ -2,7 +2,7 @@ package io.github.albertyptang.algorithms.interviewbit.binary_search;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author atang

@@ -4,8 +4,9 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author atang
@@ -13,7 +14,7 @@ import static org.junit.Assert.*;
 public class RotatedSortedArraySearchTest {
     @Test
     public void search() throws Exception {
-        final ArrayList<Integer> a = new ArrayList<>(Arrays.asList(4, 5, 6, 7, 0, 1, 2));
+        final List<Integer> a = Arrays.asList(4, 5, 6, 7, 0, 1, 2);
         // entries that exist.
         assertEquals(5, RotatedSortedArraySearch.search(a, 1));
         assertEquals(0, RotatedSortedArraySearch.search(a, 4));
@@ -26,7 +27,7 @@ public class RotatedSortedArraySearchTest {
         assertEquals(-1, RotatedSortedArraySearch.search(a, -5));
 
         // non-rotated
-        final ArrayList<Integer> b = new ArrayList<>(Arrays.asList(1, 7, 67, 133, 178));
+        final List<Integer> b = Arrays.asList(1, 7, 67, 133, 178);
         assertEquals(0, RotatedSortedArraySearch.search(b, 1));
     }
 }

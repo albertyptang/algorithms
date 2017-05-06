@@ -13,9 +13,9 @@ import static org.junit.Assert.*;
 public class LengthNLessThanKTest {
     @Test
     public void solve() throws Exception {
-        assertEquals(2, LengthNLessThanK.solve(new ArrayList<>(Arrays.asList(0,1,5)), 1, 2));
-        assertEquals(0, LengthNLessThanK.solve(new ArrayList<>(Arrays.asList(0,1,2,5)), 2, 8));
-        assertEquals(5, LengthNLessThanK.solve(new ArrayList<>(Arrays.asList(0,1,2,5)), 2, 21));
+        assertEquals(2, LengthNLessThanK.solve(new ArrayList<>(Arrays.asList(0, 1, 5)), 1, 2));
+        assertEquals(0, LengthNLessThanK.solve(new ArrayList<>(Arrays.asList(0, 1, 2, 5)), 2, 8));
+        assertEquals(5, LengthNLessThanK.solve(new ArrayList<>(Arrays.asList(0, 1, 2, 5)), 2, 21));
     }
 
 }

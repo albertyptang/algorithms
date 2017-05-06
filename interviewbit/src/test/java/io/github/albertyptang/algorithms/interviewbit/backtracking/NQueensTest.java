@@ -12,5 +12,4 @@ public class NQueensTest {
     public void solveNQueens() throws Exception {
         assertEquals(2, NQueens.solveNQueens(4).size());
     }
-
 }

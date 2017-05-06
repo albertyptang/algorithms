@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class MaxDistanceTest {
     @Test
     public void maximumGap() throws Exception {
-        assertEquals(2, MaxDistance.maximumGap(Arrays.asList(3,5,4,2)));
-        assertEquals(3, MaxDistance.maximumGap(Arrays.asList(3,3,3,3)));
+        assertEquals(2, MaxDistance.maximumGap(Arrays.asList(3, 5, 4, 2)));
+        assertEquals(3, MaxDistance.maximumGap(Arrays.asList(3, 3, 3, 3)));
     }
 }

@@ -12,6 +12,6 @@ import static org.junit.Assert.assertEquals;
 public class PrimeSumTest {
     @Test
     public void primesum() throws Exception {
-        assertEquals(Arrays.asList(2,2), PrimeSum.primesum(4));
+        assertEquals(Arrays.asList(2, 2), PrimeSum.primesum(4));
     }
 }
