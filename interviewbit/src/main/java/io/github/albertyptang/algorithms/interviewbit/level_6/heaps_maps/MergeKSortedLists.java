@@ -19,7 +19,7 @@ import java.util.PriorityQueue;
  * @author atang
  */
 public class MergeKSortedLists {
-    public ListNode mergeKLists(final ArrayList<ListNode> a) {
+    public static ListNode mergeKLists(final ArrayList<ListNode> a) {
         final PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (ListNode list : a) {
             while (list != null) {
